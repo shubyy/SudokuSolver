@@ -45,7 +45,5 @@ public class Main {
         double timeTaken =  (System.nanoTime() - start) / 1000000000.0;
         System.out.println("\nSolved Board in: " + timeTaken  + "s");
         solvedBoard.PrintBoard();
-
-
     }
 }

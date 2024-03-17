@@ -129,7 +129,7 @@ public class SudokuBoard {
 
 
     public boolean IsFull() {
-        return cells.contains((byte) 0);
+        return !cells.contains((byte) 0);
 
     }
 

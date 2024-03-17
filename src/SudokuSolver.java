@@ -26,7 +26,7 @@ public class SudokuSolver {
                         if(board.GetCell(pos) == 0) {
                             ArrayList<Byte> possibleValues = board.GetALlPossibleValuesForCell(pos);
                             if(possibleValues.size() == 1) {
-                                board.SetCell(pos, possibleValues.getFirst());
+                                board.SetCell(pos, possibleValues.get(0));
                                 initialFilled = true;
                             }
                         }

@@ -67,7 +67,6 @@ public class SudokuSolverThread implements Runnable {
         try {
             for(Thread t1 : solverThreads) {
                 t1.join();
-                System.out.println("Thread finished");
             }
         } catch (InterruptedException e) {
             for(Thread t1 : solverThreads) {
