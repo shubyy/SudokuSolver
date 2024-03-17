@@ -1,5 +1,3 @@
-import java.time.LocalDateTime;
-
 public class Main {
 
     public static void SetInitialBoard(SudokuBoard board) {
@@ -39,11 +37,13 @@ public class Main {
         SetInitialBoard(board);
         board.PrintBoard();
 
-        SudokuSolver solver = new SudokuSolver(board);
-        long start = System.nanoTime();
-        SudokuBoard solvedBoard = solver.StartSolve();
-        double timeTaken =  (System.nanoTime() - start) / 1000000000.0;
-        System.out.println("\nSolved Board in: " + timeTaken  + "s");
-        solvedBoard.PrintBoard();
+        SudokuUI ui = new SudokuUI(board);
+
+        //SudokuSolver solver = new SudokuSolver(board);
+        //long start = System.nanoTime();
+        //SudokuBoard solvedBoard = solver.StartSolve();
+        //double timeTaken =  (System.nanoTime() - start) / 1000000000.0;
+        //System.out.println("\nSolved Board in: " + timeTaken  + "s");
+        //solvedBoard.PrintBoard();
     }
 }
