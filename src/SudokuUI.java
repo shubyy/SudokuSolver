@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowEvent;
 
 public class SudokuUI {
@@ -26,9 +28,14 @@ public class SudokuUI {
                 
                 Vector2 pos = new Vector2(j, i);
                 textField.setText( String.valueOf(board.GetCell(pos) ) );
-                
+                textField.addKeyListener(new KeyAdapter() {
+                    public void keyTyped(KeyEvent e) { 
+                        if (textField.getText().length() >= 1 ) // limit textfield to 3 characters
+                            e.consume(); 
+                    }  
+                });
                 textField.setBorder(null);
-                textField.setBackground(Color.GRAY);
+                textField.setBackground(Color.LIGHT_GRAY);
                 textField.setHorizontalAlignment(SwingConstants.CENTER);
                 textField.setForeground(Color.BLACK);
                 textField.setFont(new Font("Arial", Font.PLAIN, 30));
